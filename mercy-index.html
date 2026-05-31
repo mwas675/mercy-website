@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Mercy — My Everything</title>
+
+  <!-- ── STYLESHEET ─────────────────────────────── -->
+  <link rel="stylesheet" href="mercy-styles.css" />
+</head>
+<body>
+
+  <!-- ── CUSTOM CURSOR ──────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="trail"></div>
+
+  <!-- ── SCROLL PROGRESS BAR ────────────────────── -->
+  <div id="progress"></div>
+
+  <!-- ── SIDE NAV DOTS ──────────────────────────── -->
+  <div id="nav-dots">
+    <div class="nav-dot active" onclick="scrollToSection(0)"></div>
+    <div class="nav-dot"        onclick="scrollToSection(1)"></div>
+    <div class="nav-dot"        onclick="scrollToSection(2)"></div>
+    <div class="nav-dot"        onclick="scrollToSection(3)"></div>
+    <div class="nav-dot"        onclick="scrollToSection(4)"></div>
+    <div class="nav-dot"        onclick="scrollToSection(5)"></div>
+    <div class="nav-dot"        onclick="scrollToSection(6)"></div>
+  </div>
+
+  <!-- ── AMBIENT LIGHT ORBS ─────────────────────── -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ── 3D STARFIELD BACKGROUND ────────────────── -->
+  <div id="scene">
+    <canvas id="starfield"></canvas>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       MAIN CONTENT
+       ════════════════════════════════════════════ -->
+  <div id="content">
+
+    <!-- HERO ──────────────────────────────────── -->
+    <section id="hero" class="section-target">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">✦ A love letter in poems ✦</p>
+        <h1 class="hero-title">Mercy</h1>
+        <p class="hero-subtitle">Every word I've ever written, I've written for you.</p>
+        <div class="scroll-cue">
+          <span>Read my heart</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POEM I ─────────────────────────────────── -->
+    <section class="poem-section section-bg-1 section-target">
+      <div class="poem-card reveal">
+        <p class="poem-number">Poem I</p>
+        <h2 class="poem-title">The First Time I Saw You</h2>
+        <div class="poem-body">The first time I saw you,
+the whole world held its breath —
+as if the stars leaned in closer,
+and the moon forgot to set.
+
+Your eyes were quiet oceans
+where I wanted to drown slowly,
+your laugh a song the birds
+had only dreamed of singing.
+
+I did not choose to love you,
+the way the river does not choose the sea —
+<em>I simply flowed toward you,
+knowing nowhere else to be.</em>
+
+And in that single glorious moment,
+before you'd even said my name,
+I knew that everything before you
+was only waiting for you to come.</div>
+        <button class="voice-btn" onclick="speakPoem(0, this)">
+          <span class="voice-icon">
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+          </span>
+          <span class="btn-text">Hear this poem</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- POEM II ────────────────────────────────── -->
+    <section class="poem-section section-bg-2 section-target">
+      <div class="poem-card reveal">
+        <p class="poem-number">Poem II</p>
+        <h2 class="poem-title">In the Quiet Hours</h2>
+        <div class="poem-body">In the quiet hours before dawn,
+when the city finally sleeps,
+I think of the way you say my name —
+soft and sure, like you mean it.
+
+I think of your hands,
+warm and certain,
+and how the world shrinks
+to something small and safe
+whenever you are near.
+
+<em>You are the kind of beautiful
+that doesn't need the light —
+you carry your own glow,
+a lantern in my longest night.</em>
+
+I never knew that silence
+could be so full of someone,
+until I found myself
+in every quiet thinking only of you.</div>
+        <button class="voice-btn" onclick="speakPoem(1, this)">
+          <span class="voice-icon">
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+          </span>
+          <span class="btn-text">Hear this poem</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- POEM III ───────────────────────────────── -->
+    <section class="poem-section section-bg-3 section-target">
+      <div class="poem-card reveal">
+        <p class="poem-number">Poem III</p>
+        <h2 class="poem-title">Mercy</h2>
+        <div class="poem-body">Your name is a poem
+I repeat to myself
+the way a prayer is repeated —
+not out of habit, but out of need.
+
+<em>Mercy. Mercy. Mercy.</em>
+Three syllables that hold
+every beautiful thing
+I've ever known.
+
+You are the grace I didn't earn,
+the gift I didn't know to ask for,
+the answer to a question
+I had carried all my life.
+
+In a world that is often unkind,
+you are the soft place I land —
+the mercy shown to a wandering heart
+by the most extraordinary hands.
+
+<em>You are my Mercy,
+and I am endlessly,
+hopelessly,
+gloriously yours.</em></div>
+        <button class="voice-btn" onclick="speakPoem(2, this)">
+          <span class="voice-icon">
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+          </span>
+          <span class="btn-text">Hear this poem</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- POEM IV ────────────────────────────────── -->
+    <section class="poem-section section-bg-4 section-target">
+      <div class="poem-card reveal">
+        <p class="poem-number">Poem IV</p>
+        <h2 class="poem-title">A Thousand Little Things</h2>
+        <div class="poem-body">I love you in a thousand little things —
+the way you tilt your head when you are thinking,
+the sound your laughter makes
+when it catches you by surprise.
+
+I love you in the small hours,
+in the ordinary days,
+in the grocery-store moments
+and the storms we've weathered side by side.
+
+<em>Love is not always fireworks —
+sometimes it is steady candlelight,
+burning warm and sure and faithful
+through the ordinary dark.</em>
+
+You are my steady candlelight, Mercy.
+My everyday miracle.
+The reason ordinary days
+feel like extraordinary gifts.
+
+I would choose you —
+a thousand times,
+in a thousand lifetimes —
+always, always you.</div>
+        <button class="voice-btn" onclick="speakPoem(3, this)">
+          <span class="voice-icon">
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+          </span>
+          <span class="btn-text">Hear this poem</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- POEM V ─────────────────────────────────── -->
+    <section class="poem-section section-bg-5 section-target">
+      <div class="poem-card reveal">
+        <p class="poem-number">Poem V</p>
+        <h2 class="poem-title">What I Want You to Know</h2>
+        <div class="poem-body">I want you to know
+that you are enough —
+more than enough,
+<em>a whole universe of enough.</em>
+
+I want you to know
+that on your hardest days,
+when you cannot see your own light,
+I will hold it for you.
+
+I want you to know
+that loving you is the easiest thing
+I have ever done —
+and the most important.
+
+That I wake up grateful.
+That you have made me better.
+That the world is more beautiful
+simply because you are in it.
+
+<em>And I want you to know
+this is not just a poem —
+this is every truth I carry,
+written down so you can keep it.</em>
+
+You are loved, Mercy.
+Completely.
+Without condition.
+Forever.</div>
+        <button class="voice-btn" onclick="speakPoem(4, this)">
+          <span class="voice-icon">
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+            <span class="wave-bar"></span>
+          </span>
+          <span class="btn-text">Hear this poem</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- CLOSING ────────────────────────────────── -->
+    <section id="closing" class="section-target">
+      <div class="reveal">
+        <span class="big-heart">♥</span>
+        <p class="closing-msg">Always yours, Mercy.<br>In every poem, in every breath.</p>
+        <p class="closing-from">— Written for you, with all of me —</p>
+      </div>
+    </section>
+
+  </div><!-- /#content -->
+
+  <!-- ── JAVASCRIPT ─────────────────────────────── -->
+  <script src="mercy-scripts.js"></script>
+
+</body>
+</html>
